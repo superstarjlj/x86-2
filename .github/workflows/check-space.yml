@@ -1,6 +1,3 @@
-#检查磁盘空间
-
-
 name: Free Disk Space (Ubuntu)
 on: push
 
