@@ -1,0 +1,10 @@
+#检查磁盘空间
+
+name: check-space
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    - name: Check space usage
+      if: (!cancelled())
+      run: df -hT
