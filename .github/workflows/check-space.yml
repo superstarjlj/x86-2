@@ -8,7 +8,7 @@ jobs:
 
     - name: apt
       run:
-            apt-get update --fix-missing
+            sudo -E apt-get update --fix-missing
 
 
 
