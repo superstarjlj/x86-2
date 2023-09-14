@@ -1,29 +1,21 @@
 #检查磁盘空间
 
-name: check-space
 
-on:
-  repository_dispatch:
-  workflow_dispatch:
-    inputs:
-      ssh:
-        description: 'SSH connection to Actions'
-        required: false
-        default: 'false'
-
+name: Free Disk Space (Ubuntu)
+on: push
 
 jobs:
-  build:
+  free-disk-space:
     runs-on: ubuntu-latest
-    
     steps:
+
     - name: Free Disk Space (Ubuntu)
       uses: jlumbroso/free-disk-space@main
       with:
         # this might remove tools that are actually needed,
         # if set to "true" but frees about 6 GB
         tool-cache: false
-
+        
         # all of these default to true, but feel free to set to
         # "false" if necessary for your workflow
         android: true
@@ -32,3 +24,4 @@ jobs:
         large-packages: true
         docker-images: true
         swap-storage: true
+
